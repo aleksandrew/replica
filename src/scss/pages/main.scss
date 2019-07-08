@@ -1,0 +1,118 @@
+@import "../vars";
+
+.main {
+  height: 90vh;
+}
+
+.main-desc {
+  letter-spacing: 3px;
+  line-height: 1.5;
+
+  @media screen and (max-width: 768px) {
+    letter-spacing: 2px;
+  } 
+}
+
+.motto {
+  letter-spacing: 2px; 
+}
+
+.explore { 
+  &__text {
+    color: $gray; 
+  }
+}
+
+.mouse {
+  width: 20px;
+  height: 35px;
+  border-radius: 100px;
+  border: 1px solid $gray;
+
+  &::before {
+    content: "";
+    position: relative;
+    display: block;
+    top: 8px;
+    margin: auto;
+    height: 5px;
+    width: 5px;
+    background-color: $gray;
+    border-radius: 100%;
+  }
+}
+
+.explore-wrap:hover {
+  .explore {
+    animation-name: wrap;
+    animation-duration: 1s;
+    animation-timing-function: ease; 
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+
+    @keyframes wrap {  
+      0% { 
+        transform: translateY(0px);
+      }
+      20% {
+        transform: translateY(4px); 
+      }
+      40% {
+        transform: translateY(8px);
+      }
+      50% { 
+        transform: translateY(10px);
+      }
+      60% {
+        transform: translateY(12px);
+      }
+      80% {
+        transform: translateY(16px);
+      }
+      100% {
+        transform: translateY(20px);
+      }
+    }
+  }
+
+  .mouse::before {
+    animation-name: wheel;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+
+    @keyframes wheel {
+      0% {
+        top: 4px; 
+        transform: scale(.7);
+      }
+      20% {
+        top: 8px;
+        transform: scale(.9);
+      }
+      40% {
+        top: 12px;
+        transform: scale(1);
+      }
+      50% {
+        top: 14px;
+        transform: scale(1);
+      }
+      60% {
+        top: 16px;
+        transform: scale(1);
+      }
+      80% {
+        top: 20px;
+        transform: scale(.9);
+      }
+      100% {
+        top: 24px; 
+        transform: scale(.7);
+      }
+    }
+  }
+}

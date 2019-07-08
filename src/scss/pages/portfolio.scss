@@ -1,0 +1,49 @@
+@import "../vars";
+
+.album {
+  cursor: pointer;
+  position: relative;
+
+  &__work {
+  }
+
+  &__desc {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    background-color: rgba(#9cd0e2, .95); 
+    transition: all .3s ease;
+  }
+
+  &-title {
+    margin-top: 10%;
+    
+    @media screen and (max-width: 768px) {
+      margin-top: 20%;
+    }
+  }
+ 
+  &-paragraph {
+    margin-top: 2%;
+    letter-spacing: 1px;
+  }
+
+  &-motto {
+    margin-top: 8%;
+    letter-spacing: 1px;
+    
+    @media screen and (max-width: 768px) {
+      margin-top: 15%; 
+    }
+  }
+}
+
+.album:hover .album__desc {
+  opacity: 1;
+  visibility: visible; 
+}
